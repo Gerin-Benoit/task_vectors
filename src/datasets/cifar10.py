@@ -11,7 +11,7 @@ cifar_classnames = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'fro
 
 class CIFAR10:
     def __init__(self, preprocess,
-                 location=os.path.expanduser('~/data'),
+                 location=os.path.expanduser('.data'),
                  batch_size=128,
                  num_workers=16):
 

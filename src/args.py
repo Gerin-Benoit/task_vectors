@@ -8,7 +8,7 @@ def parse_arguments():
     parser.add_argument(
         "--data-location",
         type=str,
-        default=os.path.expanduser('~/data'),
+        default=os.path.expanduser('./datasets/data'),
         help="The root directory for the datasets.",
     )
     parser.add_argument(
@@ -32,7 +32,7 @@ def parse_arguments():
     parser.add_argument(
         "--results-db",
         type=str,
-        default=None,
+        default="/export/DATA/task-vectors/save",
         help="Where to store the results, else does not store",
     )
     parser.add_argument(
@@ -89,13 +89,13 @@ def parse_arguments():
     parser.add_argument(
         "--cache-dir",
         type=str,
-        default=None,
+        default="/export/DATA/task-vectors/.cache",
         help="Directory for caching features and encoder",
     )
     parser.add_argument(
         "--openclip-cachedir",
         type=str,
-        default='/gscratch/efml/gamaga/.cache/open_clip',
+        default='/export/DATA/task-vectors/.cache/open_clip',
         help='Directory for caching models from OpenCLIP'
     )
     parsed_args = parser.parse_args()

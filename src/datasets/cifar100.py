@@ -5,7 +5,7 @@ from torchvision.datasets import CIFAR100 as PyTorchCIFAR100
 class CIFAR100:
     def __init__(self,
                  preprocess,
-                 location=os.path.expanduser('~/data'),
+                 location=os.path.expanduser('.data'),
                  batch_size=128,
                  num_workers=16):
 

@@ -7,7 +7,7 @@ from args import parse_arguments
 dataset = 'MNIST'
 model = 'ViT-L-14'
 args = parse_arguments()
-args.data_location = 'datasets/data'
+args.data_location = '/export/DATA/gerinb/task-vectors/datasets'
 args.model = model
 args.save = f'checkpoints/{model}'
 pretrained_checkpoint = f'checkpoints/{model}/zeroshot.pt'

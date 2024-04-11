@@ -25,7 +25,7 @@ image_encoder = task_vector_sum.apply_to(pretrained_checkpoint, scaling_coef=0.8
 print("Sources ZS:")
 for dataset in datasets:
     print(dataset)
-    eval_single_dataset(pretrained_checkpoint, dataset, args)
+    eval_single_dataset(task_vector_sum.apply_to(pretrained_checkpoint, scaling_coef=0), dataset, args)
 
 print("Sources finetuned:")
 for i, dataset in enumerate(datasets):
@@ -39,7 +39,7 @@ for dataset in datasets:
 
 print("ImageNet ZS:")
 args.data_location = "datasets/data"
-eval_single_dataset(pretrained_checkpoint, "ImageNet", args)
+eval_single_dataset(task_vector_sum.apply_to(pretrained_checkpoint, scaling_coef=0), "ImageNet", args)
 
 print("ImageNet with task vectors combination:")
 

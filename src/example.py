@@ -22,4 +22,5 @@ neg_task_vector = -task_vector
 image_encoder = neg_task_vector.apply_to(pretrained_checkpoint, scaling_coef=0.5)
 # Evaluate
 eval_single_dataset(image_encoder, dataset, args)
+args.data_location = 'datasets/data'
 eval_single_dataset(image_encoder, 'ImageNet', args)

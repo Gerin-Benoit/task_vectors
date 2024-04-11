@@ -7,7 +7,7 @@ from args import parse_arguments
 datasets = ['DTD', 'EuroSAT']
 model = 'ViT-L-14'
 args = parse_arguments()
-args.data_location = '/export/DATA/mzanella/datasets'
+args.data_location = 'datasets/data'
 args.model = model
 args.save = f'checkpoints/{model}'
 pretrained_checkpoint = f'checkpoints/{model}/zeroshot.pt'

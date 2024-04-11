@@ -4,7 +4,7 @@ from eval import eval_single_dataset
 from args import parse_arguments
 
 # Config
-datasets = ['SUN397', 'EuroSAT']
+datasets = ['DTD', 'EuroSAT']
 model = 'ViT-L-14'
 args = parse_arguments()
 args.data_location = '/export/DATA/mzanella/datasets'

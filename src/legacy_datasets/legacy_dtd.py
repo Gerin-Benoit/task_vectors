@@ -12,13 +12,9 @@ class DTD:
         # Data loading code
         traindir = os.path.join(location, 'dtd', 'train')
         valdir = os.path.join(location, 'dtd', 'val')
-        testdir = os.path.join(location, 'dtd', 'test')
-        os.makedirs(traindir, exist_ok=True)
-        os.makedirs(valdir, exist_ok=True)
-        os.makedirs(testdir, exist_ok=True)
 
-        self.train_dataset = datasets.DTD(
-            traindir, split='train', transform=preprocess, download=True)
+        self.train_dataset = datasets.ImageFolder(
+            traindir, transform=preprocess)
         self.train_loader = torch.utils.data.DataLoader(
             self.train_dataset,
             shuffle=True,
@@ -26,16 +22,7 @@ class DTD:
             num_workers=num_workers,
         )
 
-        self.val_dataset = datasets.DTD(
-            valdir, split='val', transform=preprocess, download=True)
-        self.val_loader = torch.utils.data.DataLoader(
-            self.val_dataset,
-            batch_size=batch_size,
-            num_workers=num_workers
-        )
-
-        self.test_dataset = datasets.DTD(
-            testdir, split='test', transform=preprocess, download=True)
+        self.test_dataset = datasets.ImageFolder(valdir, transform=preprocess)
         self.test_loader = torch.utils.data.DataLoader(
             self.test_dataset,
             batch_size=batch_size,
